@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Features – Prabhawati Pathshala</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --deep:#1a0a00;
+  --maroon:#6b1a1a;
+  --gold:#c9922e;
+  --gold-light:#e8b84b;
+  --cream:#fdf6e8;
+  --cream2:#f5ecd0;
+  --text:#2d1a0a;
+  --muted:#7a5c3a;
+}
+body{font-family:'Poppins',sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden;}
+
+/* NAV */
+.nav{display:flex;align-items:center;justify-content:space-between;padding:1.2rem 2.5rem;background:var(--deep);border-bottom:1px solid rgba(201,146,46,0.2);}
+.nav-logo{font-family:'Cinzel',serif;font-size:1.1rem;font-weight:700;color:var(--gold-light);letter-spacing:1px;text-decoration:none;}
+.back-btn{background:transparent;color:var(--gold-light);border:1px solid rgba(201,146,46,0.5);padding:8px 18px;border-radius:4px;font-family:'Poppins',sans-serif;font-size:0.8rem;cursor:pointer;text-decoration:none;transition:all 0.2s;}
+.back-btn:hover{background:rgba(201,146,46,0.1);}
+
+/* PAGE HEADER */
+.page-header{background:var(--deep);text-align:center;padding:3.5rem 2rem 4rem;position:relative;overflow:hidden;}
+.page-header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 50% 0%,#3d1800 0%,transparent 70%);}
+.page-header-inner{position:relative;z-index:2;}
+.page-eyebrow{font-size:0.7rem;letter-spacing:4px;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:0.75rem;}
+.page-title{font-family:'Cinzel',serif;font-size:clamp(1.8rem,4vw,3rem);color:#fff;margin-bottom:0.75rem;}
+.page-title span{color:var(--gold-light);}
+.page-subtitle{font-family:'Crimson Text',serif;font-style:italic;font-size:1.2rem;color:rgba(255,255,255,0.7);}
+
+/* COMMON SECTION */
+section{padding:4.5rem 2rem;}
+.section-eyebrow{font-size:0.7rem;letter-spacing:4px;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:0.75rem;}
+.section-title{font-family:'Cinzel',serif;font-size:clamp(1.4rem,2.5vw,2rem);font-weight:700;color:var(--deep);margin-bottom:1rem;line-height:1.2;}
+.section-title.light{color:var(--cream);}
+.divider-ornament{display:flex;align-items:center;gap:1rem;margin-bottom:2.5rem;}
+.divider-ornament::before,.divider-ornament::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--gold));}
+.divider-ornament::after{background:linear-gradient(90deg,var(--gold),transparent);}
+.ornament-diamond{width:10px;height:10px;background:var(--gold);transform:rotate(45deg);flex-shrink:0;}
+
+/* ===== SECTION 1 — EXAM NOTIFICATIONS ===== */
+.notif-section{background:var(--cream);}
+.notif-inner{max-width:900px;margin:0 auto;}
+.notif-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.25rem;margin-top:1rem;}
+.notif-card{
+  background:#fff;
+  border:1px solid rgba(201,146,46,0.3);
+  border-radius:8px;padding:1.5rem;
+  position:relative;overflow:hidden;
+  transition:transform 0.2s,box-shadow 0.2s;
+}
+.notif-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold-light));}
+.notif-card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(0,0,0,0.1);}
+.notif-card-title{font-family:'Cinzel',serif;font-size:1rem;color:var(--deep);margin-bottom:0.4rem;font-weight:600;}
+.notif-card-sub{font-size:0.78rem;color:var(--muted);margin-bottom:1rem;line-height:1.5;}
+.notif-link{
+  display:inline-flex;align-items:center;gap:6px;
+  background:linear-gradient(135deg,var(--gold),var(--gold-light));
+  color:var(--deep);font-weight:600;font-size:0.78rem;
+  padding:8px 18px;border-radius:4px;text-decoration:none;
+  transition:transform 0.2s,box-shadow 0.2s;
+}
+.notif-link:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(201,146,46,0.4);}
+.notif-link.disabled{background:rgba(201,146,46,0.2);color:var(--muted);pointer-events:none;}
+
+/* ===== SECTION 2 — DAILY TASK ===== */
+.task-section{background:var(--deep);position:relative;overflow:hidden;}
+.task-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(107,26,26,0.4) 0%,transparent 60%);}
+.task-inner{max-width:750px;margin:0 auto;position:relative;z-index:2;}
+.task-box{background:rgba(255,255,255,0.04);border:1px solid rgba(201,146,46,0.3);border-radius:10px;padding:2rem;}
+.task-input-row{display:flex;gap:0.75rem;margin-bottom:1.25rem;}
+.task-input{
+  flex:1;background:rgba(255,255,255,0.06);
+  border:1px solid rgba(201,146,46,0.3);
+  border-radius:4px;padding:10px 14px;
+  color:#fff;font-family:'Poppins',sans-serif;font-size:0.85rem;
+  outline:none;transition:border-color 0.2s;
+}
+.task-input:focus{border-color:var(--gold-light);}
+.task-input::placeholder{color:rgba(255,255,255,0.3);}
+.task-add-btn{
+  background:linear-gradient(135deg,var(--gold),var(--gold-light));
+  color:var(--deep);font-weight:600;font-size:0.82rem;
+  padding:10px 20px;border-radius:4px;border:none;cursor:pointer;
+  font-family:'Poppins',sans-serif;white-space:nowrap;
+  transition:transform 0.2s;
+}
+.task-add-btn:hover{transform:translateY(-2px);}
+.task-list{list-style:none;display:flex;flex-direction:column;gap:0.6rem;margin-bottom:1.5rem;min-height:60px;}
+.task-item{
+  display:flex;align-items:center;gap:0.75rem;
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(201,146,46,0.15);
+  border-radius:6px;padding:10px 14px;
+}
+.task-item.done .task-text{text-decoration:line-through;color:rgba(255,255,255,0.35);}
+.task-check{
+  width:18px;height:18px;border-radius:50%;
+  border:2px solid var(--gold);background:transparent;
+  cursor:pointer;flex-shrink:0;display:flex;align-items:center;justify-content:center;
+  transition:background 0.2s;
+}
+.task-item.done .task-check{background:var(--gold);}
+.task-text{flex:1;font-size:0.85rem;color:rgba(255,255,255,0.8);}
+.task-del{background:none;border:none;color:rgba(255,255,255,0.25);cursor:pointer;font-size:1rem;padding:0 4px;transition:color 0.2s;}
+.task-del:hover{color:#ff6b6b;}
+.task-empty{color:rgba(255,255,255,0.25);font-size:0.82rem;text-align:center;padding:1rem 0;}
+.tg-join-btn{
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  background:#229ED9;color:#fff;
+  font-weight:600;font-size:0.85rem;
+  padding:12px 24px;border-radius:6px;
+  text-decoration:none;transition:transform 0.2s,box-shadow 0.2s;
+  margin-top:0.5rem;
+}
+.tg-join-btn:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(34,158,217,0.4);}
+
+/* ===== SECTION 3 — PHOTO STRIP ===== */
+.strip-section{background:var(--cream2);overflow:hidden;}
+.strip-inner{max-width:1200px;margin:0 auto;}
+.strip-scroll{
+  display:flex;gap:1.25rem;
+  overflow-x:auto;padding-bottom:1rem;
+  scroll-snap-type:x mandatory;
+  -webkit-overflow-scrolling:touch;
+}
+.strip-scroll::-webkit-scrollbar{height:5px;}
+.strip-scroll::-webkit-scrollbar-track{background:rgba(201,146,46,0.1);border-radius:10px;}
+.strip-scroll::-webkit-scrollbar-thumb{background:var(--gold);border-radius:10px;}
+.strip-card{
+  scroll-snap-align:start;flex-shrink:0;
+  width:200px;
+  background:#fff;border-radius:10px;
+  border:1px solid rgba(201,146,46,0.3);
+  overflow:hidden;
+  transition:transform 0.2s,box-shadow 0.2s;
+  position:relative;
+}
+.strip-card:hover{transform:translateY(-5px);box-shadow:0 15px 35px rgba(0,0,0,0.12);}
+.strip-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold-light));}
+.strip-img{
+  width:100%;height:160px;object-fit:cover;
+  background:linear-gradient(135deg,var(--deep),var(--maroon));
+  display:flex;align-items:center;justify-content:center;
+  color:rgba(255,255,255,0.3);font-size:0.75rem;
+}
+.strip-img img{width:100%;height:160px;object-fit:cover;display:block;}
+.strip-label{
+  padding:0.75rem;text-align:center;
+  font-family:'Cinzel',serif;font-size:0.82rem;
+  color:var(--deep);font-weight:600;line-height:1.3;
+}
+.strip-more{
+  scroll-snap-align:start;flex-shrink:0;
+  width:200px;height:220px;
+  background:linear-gradient(135deg,var(--gold),var(--gold-light));
+  border-radius:10px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:0.5rem;cursor:pointer;
+  transition:transform 0.2s,box-shadow 0.2s;
+}
+.strip-more:hover{transform:translateY(-5px);box-shadow:0 15px 35px rgba(201,146,46,0.3);}
+.strip-more span:first-child{font-size:2rem;}
+.strip-more span:last-child{font-family:'Cinzel',serif;font-size:0.85rem;color:var(--deep);font-weight:700;}
+
+/* ===== SECTION 4 — FREE STUDY MATERIAL ===== */
+.material-section{background:var(--maroon);position:relative;overflow:hidden;}
+.material-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(201,146,46,0.12) 0%,transparent 60%);}
+.material-inner{max-width:900px;margin:0 auto;position:relative;z-index:2;}
+.material-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;margin-top:1rem;}
+.material-card{
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(201,146,46,0.3);
+  border-radius:10px;padding:2rem;
+  text-align:center;
+  transition:transform 0.2s,box-shadow 0.2s;
+  position:relative;overflow:hidden;
+}
+.material-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold-light));}
+.material-card:hover{transform:translateY(-4px);box-shadow:0 15px 40px rgba(0,0,0,0.3);}
+.material-icon{font-size:2.5rem;margin-bottom:1rem;}
+.material-title{font-family:'Cinzel',serif;font-size:1rem;color:var(--gold-light);margin-bottom:0.5rem;}
+.material-desc{font-size:0.8rem;color:rgba(255,255,255,0.6);line-height:1.6;margin-bottom:1.25rem;}
+.material-btn{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:10px 22px;border-radius:4px;
+  font-size:0.8rem;font-weight:600;
+  text-decoration:none;transition:all 0.2s;
+  font-family:'Poppins',sans-serif;
+}
+.material-btn.drive{background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--deep);}
+.material-btn.drive:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(201,146,46,0.4);}
+.material-btn.telegram{background:#229ED9;color:#fff;}
+.material-btn.telegram:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(34,158,217,0.4);}
+
+/* FOOTER */
+footer{background:var(--deep);border-top:1px solid rgba(201,146,46,0.2);padding:2.5rem;text-align:center;}
+.footer-logo{font-family:'Cinzel',serif;font-size:1.1rem;color:var(--gold-light);margin-bottom:0.5rem;}
+.footer-motto{font-family:'Crimson Text',serif;font-style:italic;color:rgba(255,255,255,0.4);font-size:0.9rem;}
+.footer-copy{font-size:0.7rem;color:rgba(255,255,255,0.25);margin-top:1rem;}
+
+@media(max-width:700px){
+  .nav{padding:1rem 1.25rem;}
+  .task-input-row{flex-direction:column;}
+  .strip-card{width:160px;}
+  .strip-more{width:160px;height:200px;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="index.html" class="nav-logo">Prabhawati Pathshala</a>
+  <a href="index.html" class="back-btn">← Back to Home</a>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="page-header-inner">
+    <p class="page-eyebrow">Completely Free</p>
+    <h1 class="page-title">Explore <span>Free Features</span></h1>
+    <p class="page-subtitle">Everything you need to prepare — without spending a rupee</p>
+  </div>
+</div>
+
+<!-- SECTION 1: EXAM NOTIFICATIONS -->
+<section class="notif-section" id="notifications">
+  <div class="notif-inner">
+    <p class="section-eyebrow">Latest Updates</p>
+    <h2 class="section-title">Exam Notifications</h2>
+    <div class="divider-ornament"><div class="ornament-diamond"></div></div>
+    <div class="notif-grid">
+
+      <div class="notif-card">
+        <div class="notif-card-title">SSC CGL</div>
+        <div class="notif-card-sub">Combined Graduate Level — Notification, syllabus & official PDF</div>
+        <!-- YAHAN APNI DRIVE LINK DAALO -->
+        <a href="YOUR_DRIVE_LINK_HERE" target="_blank" class="notif-link">📄 View Notification</a>
+      </div>
+
+      <div class="notif-card">
+        <div class="notif-card-title">SSC CHSL</div>
+        <div class="notif-card-sub">Combined Higher Secondary Level — Notification & details</div>
+        <a href="YOUR_DRIVE_LINK_HERE" target="_blank" class="notif-link">📄 View Notification</a>
+      </div>
+
+      <div class="notif-card">
+        <div class="notif-card-title">SSC CPO</div>
+        <div class="notif-card-sub">Central Police Organisation — Notification & syllabus</div>
+        <a href="YOUR_DRIVE_LINK_HERE" target="_blank" class="notif-link">📄 View Notification</a>
+      </div>
+
+      <div class="notif-card">
+        <div class="notif-card-title">SSC MTS</div>
+        <div class="notif-card-sub">Multi Tasking Staff — Notification & exam pattern</div>
+        <a href="YOUR_DRIVE_LINK_HERE" target="_blank" class="notif-link">📄 View Notification</a>
+      </div>
+
+      <div class="notif-card">
+        <div class="notif-card-title">SSC GD</div>
+        <div class="notif-card-sub">General Duty Constable — Notification & physical details</div>
+        <a href="YOUR_DRIVE_LINK_HERE" target="_blank" class="notif-link">📄 View Notification</a>
+      </div>
+
+      <div class="notif-card">
+        <div class="notif-card-title">Others</div>
+        <div class="notif-card-sub">UPSSSC PET, RRB, UP Police & more competitive exams</div>
+        <a href="YOUR_DRIVE_LINK_HERE" target="_blank" class="notif-link">📄 View Notification</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 2: DAILY TASK -->
+<section class="task-section" id="daily-task">
+  <div class="task-inner">
+    <p class="section-eyebrow" style="color:var(--gold)">Your Personal Planner</p>
+    <h2 class="section-title light">Write Your Daily Tasks</h2>
+    <div class="divider-ornament" style="max-width:300px;margin:0 auto 2rem;"><div class="ornament-diamond"></div></div>
+    <div class="task-box">
+      <div class="task-input-row">
+        <input class="task-input" id="taskInput" type="text" placeholder="Add a task for today... (e.g. Complete Maths Chapter 5)" maxlength="120">
+        <button class="task-add-btn" onclick="addTask()">+ Add</button>
+      </div>
+      <ul class="task-list" id="taskList"></ul>
+      <a href="https://t.me/prabhawatipathshala" target="_blank" class="tg-join-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.17 13.5l-2.945-.918c-.64-.204-.657-.64.136-.949l11.57-4.461c.537-.194 1.006.131.963.049z"/></svg>
+        Join Daily Schedule on Telegram
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3: PHOTO STRIP -->
+<section class="strip-section" id="success-posts">
+  <div class="strip-inner">
+    <p class="section-eyebrow">Government Jobs</p>
+    <h2 class="section-title">Posts You Can Achieve</h2>
+    <div class="divider-ornament"><div class="ornament-diamond"></div></div>
+    <p style="font-family:'Crimson Text',serif;font-size:1.05rem;color:var(--muted);margin-bottom:1.5rem;">Dream big — these are the posts our students prepare for every day.</p>
+    <div class="strip-scroll">
+
+      <!-- CARD 1: ASO -->
+      <div class="strip-card">
+        <div class="strip-img">
+          <!-- Image laga ne ke liye: src="your-image.jpg" -->
+          <!-- <img src="aso.jpg" alt="ASO"> -->
+          <span style="font-size:2.5rem;">🏛️</span>
+        </div>
+        <div class="strip-label">Assistant Section Officer (ASO)</div>
+      </div>
+
+      <!-- CARD 2: CSS -->
+      <div class="strip-card">
+        <div class="strip-img">
+          <!-- <img src="css.jpg" alt="CSS Inspector"> -->
+          <span style="font-size:2.5rem;">⚖️</span>
+        </div>
+        <div class="strip-label">Central Secretariat Service (CSS)</div>
+      </div>
+
+      <!-- CARD 3: GST Inspector -->
+      <div class="strip-card">
+        <div class="strip-img">
+          <!-- <img src="gst.jpg" alt="GST Inspector"> -->
+          <span style="font-size:2.5rem;">🔍</span>
+        </div>
+        <div class="strip-label">GST Inspector</div>
+      </div>
+
+      <!-- CARD 4: Preventive Officer -->
+      <div class="strip-card">
+        <div class="strip-img">
+          <!-- <img src="preventive.jpg" alt="Preventive Officer"> -->
+          <span style="font-size:2.5rem;">🛡️</span>
+        </div>
+        <div class="strip-label">Preventive Officer</div>
+      </div>
+
+      <!-- CARD 5: UPSI -->
+      <div class="strip-card">
+        <div class="strip-img">
+          <!-- <img src="upsi.jpg" alt="UPSI"> -->
+          <span style="font-size:2.5rem;">👮</span>
+        </div>
+        <div class="strip-label">UP Sub Inspector (UPSI)</div>
+      </div>
+
+      <!-- MANY MORE -->
+      <div class="strip-more">
+        <span>✨</span>
+        <span>Many More...</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4: FREE STUDY MATERIAL -->
+<section class="material-section" id="study-material">
+  <div class="material-inner">
+    <p class="section-eyebrow" style="color:rgba(255,255,255,0.5)">Free Resources</p>
+    <h2 class="section-title light">Free Study Materials</h2>
+    <div class="divider-ornament" style="max-width:300px;margin:0 auto 2rem;"><div class="ornament-diamond"></div></div>
+    <div class="material-grid">
+
+      <div class="material-card">
+        <div class="material-icon">📁</div>
+        <div class="material-title">Study Material Drive</div>
+        <div class="material-desc">Notes, PYQs, and practice sheets — all organized on Google Drive. Free for every student.</div>
+        <!-- YAHAN APNI GOOGLE DRIVE LINK DAALO -->
+        <a href="YOUR_GOOGLE_DRIVE_LINK" target="_blank" class="material-btn drive">📂 Open Drive</a>
+      </div>
+
+      <div class="material-card">
+        <div class="material-icon">✈️</div>
+        <div class="material-title">Telegram Channel</div>
+        <div class="material-desc">Daily study material, current affairs, and exam updates delivered directly on Telegram.</div>
+        <a href="https://t.me/prabhawatipathshala" target="_blank" class="material-btn telegram">Join Channel</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Prabhawati Pathshala</div>
+  <div class="footer-motto">Kindle the Lamp of Wisdom</div>
+  <div class="footer-copy">© 2026 Prabhawati Pathshala. All rights reserved.</div>
+</footer>
+
+<script>
+// ===== DAILY TASK (localStorage) =====
+function loadTasks(){
+  const tasks = JSON.parse(localStorage.getItem('pp_tasks') || '[]');
+  renderTasks(tasks);
+}
+
+function saveTasks(tasks){
+  localStorage.setItem('pp_tasks', JSON.stringify(tasks));
+}
+
+function getTasks(){
+  return JSON.parse(localStorage.getItem('pp_tasks') || '[]');
+}
+
+function renderTasks(tasks){
+  const list = document.getElementById('taskList');
+  if(tasks.length === 0){
+    list.innerHTML = '<li class="task-empty">No tasks yet. Add your first task above! 📝</li>';
+    return;
+  }
+  list.innerHTML = tasks.map((t,i) => `
+    <li class="task-item ${t.done ? 'done' : ''}" id="task-${i}">
+      <div class="task-check" onclick="toggleTask(${i})">
+        ${t.done ? '✓' : ''}
+      </div>
+      <span class="task-text">${t.text}</span>
+      <button class="task-del" onclick="deleteTask(${i})">✕</button>
+    </li>
+  `).join('');
+}
+
+function addTask(){
+  const input = document.getElementById('taskInput');
+  const text = input.value.trim();
+  if(!text) return;
+  const tasks = getTasks();
+  tasks.push({text, done: false});
+  saveTasks(tasks);
+  renderTasks(tasks);
+  input.value = '';
+}
+
+function toggleTask(i){
+  const tasks = getTasks();
+  tasks[i].done = !tasks[i].done;
+  saveTasks(tasks);
+  renderTasks(tasks);
+}
+
+function deleteTask(i){
+  const tasks = getTasks();
+  tasks.splice(i,1);
+  saveTasks(tasks);
+  renderTasks(tasks);
+}
+
+// Enter key se bhi task add ho
+document.getElementById('taskInput').addEventListener('keydown', function(e){
+  if(e.key === 'Enter') addTask();
+});
+
+loadTasks();
+</script>
+
+</body>
+</html>
